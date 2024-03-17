@@ -1,22 +1,29 @@
 # dew_point_regulated_ventilation
 Ventilation that only kicks in if the outside air is dry enough to avoid condensation inside
 
-Inspired by [Taupunktlüfter https://github.com/MakeMagazinDE/Taupunktluefter/tree/main] the basic idea is to avoid ventilation while its to humid outside.
+Inspired by [Taupunktlüfter MakeMagazinDe](https://github.com/MakeMagazinDE/Taupunktluefter/tree/main), the basic idea is to avoid ventilation while its to humid outside.
 
 In Ireland we have cold clear day's frequently followed up by warn rainy day's especially in the winter. For an outdoor building with open ventialation can then turin into a humidity collector. The weather changes fast enough that even cardboard can end up covered in condensation. The consequence is typically mold. 
 
 The unit consists of:
 
-* ESP8226 for wifi and brains
-* 2x GY-21 humidity and temperature sensors
+* ESP8266-12F CH340G for wifi and brains
+* 2x GY-21 HTU21 i2c Humidity and temperature sensor
 * 1x BMP180 air pressure sensor (just for fun)
 * 1x PIR motion sensor (just for backlight control)
-* 1x 20x4 LCD
+* 1x 20x4 LCD with serial
 * 1x PCA9548A multiplexor
 * 1x SRD-05-VDC-SLC 5V controlled 10A 250VA relay (ony used for 12V)
-* 1x 12V to 5V regulator
+* 1x LM2569S 12V to 5V Step Down DC to DC Buck Converter
 * breadboard
+* 2x Green 2P YIXISI PCB Board Connctor, male and female
+* 2x Green 4P YIXISI PCB Board Connctor, male and female
+* headers
+* 100uF capacitor
 * various headers
+* 1x DC 12V >3A AC Adapter
+
+You can get most of the stuff from [Amazon AZ-Delivery Store](https://www.amazon.co.uk/stores/AZDelivery/AZDelivery/page/D423652A-8F19-42A8-9459-F30D080148D5) but be ware that most sensor exist without i2c, you need the HTU21 with i2c.
 
 Aside from switching two 12V fan's on and off the unit also:
 * Displays inside temperature and humidy
@@ -30,7 +37,7 @@ If you intend to compile it and load it onto a Generic ESP8266 you will need to 
 
 src/wifi_access.h
 ```
-const char* ssid = "YOU_WIFI_NAME";
+const char* ssid = "YOUR_WIFI_NAME";
 const char* password = "YOUR_PASSWORD";
 ```
 
@@ -88,7 +95,8 @@ Sample rest data, unit was inside the house at the time:
 
 ## How well does it work?
 
-In Ireland the chances of having dry enough outside air is just not happening often enough. The building this unit is in was never designed to be dry in the firs place. When the unit broke down due to a failing GY-21 for 3 Month in the winter it did get VERY obvious that everything in the shed is doomed without the unit. Aside from metal rosting everything started growing mold and the smell of dempness started to inensify.
+In Ireland it is rare to have dry enough outside air. The unit makes a big difference but is not enough for a country with wet winters. 
+The building this unit is in was never designed to be dry in the firs place. When the unit broke down due to a failing GY-21 for 3 Month in the winter it did get VERY obvious that everything in the shed is doomed without the unit. Aside from metal rosting, mold and the smell of dempness started to inensify. Full protection against mould would however require some sort of intermitting heating.
 
 ## What next?
 
