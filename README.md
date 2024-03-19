@@ -3,7 +3,7 @@ Ventilation that only kicks in if the outside air is dry enough to avoid condens
 
 Inspired by [Taupunktlüfter MakeMagazinDe](https://github.com/MakeMagazinDE/Taupunktluefter/tree/main), the basic idea is to avoid ventilation while its to humid outside.
 
-In Ireland we have cold clear day's frequently followed up by warn rainy day's especially in the winter. For an outdoor building with open ventialation can then turin into a humidity collector. The weather changes fast enough that even cardboard can end up covered in condensation. The consequence is typically mold. 
+In Ireland we have cold clear day's frequently followed up by warn rainy day's especially in the winter. For an outdoor building with open ventialation can then turn into a humidity collector. The weather can change so fast that outdoor air even cardboard can end up with condensation. The consequence is typically mold. 
 
 The unit consists of:
 
@@ -23,7 +23,7 @@ The unit consists of:
 * various headers
 * 1x DC 12V >3A AC Adapter
 
-You can get most of the stuff from [Amazon AZ-Delivery Store](https://www.amazon.co.uk/stores/AZDelivery/AZDelivery/page/D423652A-8F19-42A8-9459-F30D080148D5) but be ware that most sensor exist without i2c, you need the HTU21 with i2c.
+You can get most of the stuff from [Amazon AZ-Delivery Store](https://www.amazon.co.uk/stores/AZDelivery/AZDelivery/page/D423652A-8F19-42A8-9459-F30D080148D5). Be ware that most sensors exist without i2c, you need the HTU21 with i2c!
 
 Aside from switching two 12V fan's on and off the unit also:
 * Displays inside temperature and humidy
@@ -96,7 +96,7 @@ Sample rest data, unit was inside the house at the time:
 ## How well does it work?
 
 In Ireland it is rare to have dry enough outside air. The unit makes a big difference but is not enough for a country with wet winters. 
-The building this unit is in was never designed to be dry in the firs place. When the unit broke down due to a failing GY-21 for 3 Month in the winter it did get VERY obvious that everything in the shed is doomed without the unit. Aside from metal rosting, mold and the smell of dempness started to inensify. Full protection against mould would however require some sort of intermitting heating.
+The building this unit is in was never designed to be dry in the first place. When the unit broke down due to a failing GY-21 for 3 Month in the winter it did get VERY obvious that everything in the shed is doomed without the unit. Aside from metal rosting, mold and the smell of dempness started to inensify. Full protection against mould would however require some sort of intermitting heating.
 
 ## What next?
 
